@@ -14,6 +14,9 @@ app.get('/service1', (req, res) => {
   res.send(response)
 })
 
+app.get('/health_check', (req, res) => {
+  res.send("OK!")
+})
 
 app.listen(port, () => {
   console.log(`MicroServieA Listening on port ${port}`)

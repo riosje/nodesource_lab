@@ -74,7 +74,7 @@ resource "kubernetes_ingress_v1" "nodesource_ingress" {
     name      = "ingress-nodesource-lab"
     namespace = "default"
     annotations = {
-      "alb.ingress.kubernetes.io/healthcheck-path" = "/"
+      "alb.ingress.kubernetes.io/healthcheck-path" = "/health_check"
       "alb.ingress.kubernetes.io/scheme"           = "internet-facing"
     }
   }
