@@ -80,5 +80,5 @@ jobs:
         with:
           args: apply
             --namespace=default
-            -f k8s/service.yml
-            -f k8s/deployment.yml
+            -f packages/microServiceA/k8s/service.yml
+            -f packages/microServiceA/k8s/deployment.yml
