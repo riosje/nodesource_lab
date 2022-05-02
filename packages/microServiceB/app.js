@@ -10,7 +10,7 @@ response = {
     "version": version
  }
 
-app.get('/', (req, res) => {
+app.get('/service2', (req, res) => {
   res.send(response)
 })
 
