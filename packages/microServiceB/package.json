@@ -1,0 +1,16 @@
+{
+  "name": "microserviceb",
+  "version": "1.0.0",
+  "description": "nodesource microserviceb",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "node app.js",
+    "build": ""
+  },
+  "author": "@riosje",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

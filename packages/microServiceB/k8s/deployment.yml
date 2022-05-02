@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: microserviceb
+  name: microserviceb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: microserviceb
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: microserviceb
+    spec:
+      containers:
+      - name: microserviceb
+        image: 771192296425.dkr.ecr.us-east-1.amazonaws.com/nodesource-lab-micro-b:${IMAGE_TAG}
+        env:
+        - name: VERSION
+          value: ${RELEASE_VERSION}
+        ports:
+        - containerPort: 8080
