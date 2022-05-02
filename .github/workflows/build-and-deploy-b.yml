@@ -35,6 +35,9 @@ jobs:
         working-directory: packages/microServiceB
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -52,6 +55,7 @@ jobs:
           ECR_REPOSITORY: nodesource-lab-micro-b
           IMAGE_TAG: ${{ github.sha }}
         run: |
+          npm install
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG . --file Dockerfile
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
